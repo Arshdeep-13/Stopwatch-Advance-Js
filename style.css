@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --glow-color: hsl(186 100% 69%);
+  --container-color: hsl(244, 88%, 64%); 
+}
+body {
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--container-color);
+  padding: 5vh 5vw 2vh;
+}
+.container label {
+  font-size: 8vw;
+}
+.container .btn {
+  padding: 2vh 1vw;
+  /* border: 2px solid yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+.glow-on-hover {
+  border: 2px solid white;
+  width: 8vw;
+  height: 6vh;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.glowing-btn {
+  margin-bottom: 2vh;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 1vh 1vw;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+
+  box-shadow: inset 0px 0px 1px 0px var(--glow-color),
+    0px 0px 10px 0px var(--glow-color);
+}
+h1{
+  margin-bottom: 1vh;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn {
+    font-size: 1em;
+  }
+}
+ol {
+  height: 20vh;
+  width: 28vw;
+  overflow-y: scroll;
+  text-align: center;
+  padding: 4vh 0;
+  list-style-position: inside;
+}
+ol::-webkit-scrollbar {
+  display: none;
+}
