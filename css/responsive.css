@@ -1,0 +1,23 @@
+@media screen and (max-width: 500px) {
+  .container {
+    width: -webkit-fill-available;
+    margin: 0 20vw;
+  }
+  .glow-on-hover {
+    width: 17vw;
+    font-size: 5vw;
+  }
+  .container label {
+    font-size: 12vw;
+  }
+  h1 {
+    margin-bottom: 5vh;
+  }
+  ol {
+    height: auto;
+    width: auto;
+  }
+  .glowing-btn {
+    font-size: 6.5vw;
+  }
+}
